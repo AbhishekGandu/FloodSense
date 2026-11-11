@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Flood Risk | FloodSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-brand">FloodSense</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('predict_page') }}">Predict Floods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Safe result card -->
+        <section class="card result-card result-safe">
+            <div class="result-icon safe-icon">✅</div>
+            <h1>No Flood Risk Detected</h1>
+            <p class="result-message">
+                Based on the weather and rainfall parameters you entered, the model predicts
+                <strong>no significant flood risk</strong> under the current conditions.
+            </p>
+            <div class="info-box">
+                <h3>Stay Prepared</h3>
+                <p>
+                    While no flood risk was detected for these inputs, it is always wise to
+                    monitor weather forecasts, maintain awareness of local conditions, and
+                    keep emergency plans ready during monsoon and heavy rainfall seasons.
+                </p>
+            </div>
+            <a href="{{ url_for('predict_page') }}" class="btn btn-primary">Make Another Prediction</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 FloodSense |  Built by Gandu Abhishek for SmartBridge Internship Project</p>
+    </footer>
+</body>
+</html>

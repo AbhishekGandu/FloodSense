@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and page title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloodSense: Flood Prediction System</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-brand">FloodSense</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('predict_page') }}">Predict Floods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero section with project introduction -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>FloodSense: Flood Prediction System</h1>
+            <p class="hero-subtitle">Machine Learning for Disaster Preparedness</p>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="container">
+        <section class="card intro-card">
+            <h2>About This Project</h2>
+            <p>
+                Floods are among the most devastating natural disasters, causing loss of life,
+                property damage, and displacement of communities worldwide. Early prediction of
+                flood risk using historical weather and rainfall data can help authorities and
+                citizens take timely preventive measures.
+            </p>
+            <p>
+                <strong>FloodSense</strong> is a machine learning-based flood prediction system
+                that analyzes parameters such as temperature, humidity, cloud cover, and seasonal
+                rainfall patterns to classify whether a region is at risk of flooding.
+            </p>
+            <p>
+                Built as part of the SmartBridge internship program, this system trains multiple
+                classification models, compares their performance, and deploys the best model through
+                an interactive web application.
+            </p>
+        </section>
+
+        <section class="card features-card">
+            <h2>Key Features</h2>
+            <ul class="feature-list">
+                <li>Historical rainfall and weather data analysis</li>
+                <li>Multiple ML models: Decision Tree, Random Forest, KNN, XGBoost</li>
+                <li>Automated model selection based on accuracy</li>
+                <li>Interactive web-based flood risk prediction</li>
+            </ul>
+        </section>
+
+        <!-- Call-to-action button to start prediction -->
+        <div class="cta-section">
+            <a href="{{ url_for('predict_page') }}" class="btn btn-primary btn-large">
+                Start Flood Prediction
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 FloodSense | Built by Gandu Abhishek for SmartBridge Internship Project</p>
+    </footer>
+</body>
+</html>

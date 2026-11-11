@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Risk Detected | FloodSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-brand">FloodSense</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('predict_page') }}">Predict Floods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Warning result card -->
+        <section class="card result-card result-danger">
+            <div class="result-icon danger-icon">⚠️</div>
+            <h1>Flood Risk Detected</h1>
+            <p class="result-message">
+                Based on the weather and rainfall parameters you entered, the model predicts
+                a <strong>high probability of flooding</strong> in the given conditions.
+            </p>
+            <div class="alert-box">
+                <h3>Safety Recommendations</h3>
+                <ul>
+                    <li>Stay informed through local weather alerts and emergency broadcasts.</li>
+                    <li>Avoid low-lying areas, riverbanks, and flood-prone zones.</li>
+                    <li>Prepare an emergency kit with food, water, medicines, and documents.</li>
+                    <li>Follow evacuation orders issued by local authorities immediately.</li>
+                    <li>Do not attempt to drive or walk through flooded roads.</li>
+                </ul>
+            </div>
+            <a href="{{ url_for('predict_page') }}" class="btn btn-primary">Make Another Prediction</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 FloodSense | Built by Gandu Abhishek for SmartBridge Internship Project</p>
+    </footer>
+</body>
+</html>

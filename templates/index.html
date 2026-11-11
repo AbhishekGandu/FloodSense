@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Flood Risk | FloodSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-brand">FloodSense</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('predict_page') }}" class="active">Predict Floods</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="card form-card">
+            <h1>Flood Risk Prediction</h1>
+            <p class="form-description">
+                Enter the weather and rainfall parameters below to predict flood risk.
+                All fields are required.
+            </p>
+
+            <!-- Prediction form: POST to /result -->
+            <form id="predictionForm" action="{{ url_for('result') }}" method="POST">
+                <div class="form-grid">
+                    <!-- Temperature -->
+                    <div class="form-group">
+                        <label for="Temp">Temperature (°C)</label>
+                        <input type="number" step="any" id="Temp" name="Temp" placeholder="e.g. 29">
+                    </div>
+
+                    <!-- Humidity -->
+                    <div class="form-group">
+                        <label for="Humidity">Humidity (%)</label>
+                        <input type="number" step="any" id="Humidity" name="Humidity" placeholder="e.g. 70">
+                    </div>
+
+                    <!-- Cloud Cover -->
+                    <div class="form-group">
+                        <label for="Cloud Cover">Cloud Cover (%)</label>
+                        <input type="number" step="any" id="Cloud Cover" name="Cloud Cover" placeholder="e.g. 30">
+                    </div>
+
+                    <!-- Annual Rainfall -->
+                    <div class="form-group">
+                        <label for="ANNUAL">Annual Rainfall (mm)</label>
+                        <input type="number" step="any" id="ANNUAL" name="ANNUAL" placeholder="e.g. 3248.6">
+                    </div>
+
+                    <!-- Jan-Feb Rainfall -->
+                    <div class="form-group">
+                        <label for="Jan-Feb">Jan-Feb Rainfall (mm)</label>
+                        <input type="number" step="any" id="Jan-Feb" name="Jan-Feb" placeholder="e.g. 150.2">
+                    </div>
+
+                    <!-- Mar-May Rainfall -->
+                    <div class="form-group">
+                        <label for="Mar-May">Mar-May Rainfall (mm)</label>
+                        <input type="number" step="any" id="Mar-May" name="Mar-May" placeholder="e.g. 320.5">
+                    </div>
+
+                    <!-- Jun-Sep Rainfall -->
+                    <div class="form-group">
+                        <label for="Jun-Sep">Jun-Sep Rainfall (mm)</label>
+                        <input type="number" step="any" id="Jun-Sep" name="Jun-Sep" placeholder="e.g. 1200.0">
+                    </div>
+
+                    <!-- Oct-Dec Rainfall -->
+                    <div class="form-group">
+                        <label for="Oct-Dec">Oct-Dec Rainfall (mm)</label>
+                        <input type="number" step="any" id="Oct-Dec" name="Oct-Dec" placeholder="e.g. 666.1">
+                    </div>
+
+                    <!-- Average June Rainfall -->
+                    <div class="form-group">
+                        <label for="avgjune">Average June Rainfall (mm)</label>
+                        <input type="number" step="any" id="avgjune" name="avgjune" placeholder="e.g. 274.87">
+                    </div>
+
+                    <!-- Sub Rainfall -->
+                    <div class="form-group">
+                        <label for="sub">Sub Rainfall (mm)</label>
+                        <input type="number" step="any" id="sub" name="sub" placeholder="e.g. 649.9">
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="form-actions">
+                    <button type="submit" name="Predict" class="btn btn-primary">Predict</button>
+                    <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Flood Sense | Built by Gandu Abhishek for SmartBridge Internship Project</p>
+    </footer>
+
+    <!-- Client-side form validation -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
